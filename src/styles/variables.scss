@@ -1,0 +1,91 @@
+$bg: #e6e6e6;
+$dark-bg: #121212;
+$color: #262626;
+$dark-text: #d9d9d9;
+
+@mixin transform($i) {
+  transform: $i;
+  -webkit-transform: $i;
+  -moz-transform: $i;
+  -ms-transform: $i;
+  -o-transform: $i;
+}
+@mixin transition($i) {
+  transition: $i;
+  -webkit-transition: $i;
+  -moz-transition: $i;
+  -ms-transition: $i;
+  -o-transition: $i;
+}
+@mixin borderRadius($i) {
+  border-radius: $i;
+  -webkit-border-radius: $i;
+  -moz-border-radius: $i;
+  -ms-border-radius: $i;
+  -o-border-radius: $i;
+}
+
+//classes
+
+.row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+@mixin colWidth($i) {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 (100 / (24 / $i)) * 1%;
+  flex: 0 0 (100 / (24 / $i)) * 1%;
+  -webkit-flex: 0 0 (100 / (24 / $i)) * 1%;
+  max-width: (100 / (24 / $i)) * 1%;
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+@for $i from 1 through 24 {
+  .col-#{$i} {
+    @include colWidth($i);
+  }
+}
+
+@for $i from 1 through 24 {
+  @media (min-width: 575px) {
+    .col-sm-#{$i} {
+      @include colWidth($i);
+    }
+  }
+}
+
+@for $i from 1 through 24 {
+  @media (min-width: 768px) {
+    .col-md-#{$i} {
+      @include colWidth($i);
+    }
+  }
+}
+
+@for $i from 1 through 24 {
+  @media (min-width: 992px) {
+    .col-lg-#{$i} {
+      @include colWidth($i);
+    }
+  }
+}
+
+@for $i from 1 through 24 {
+  @media (min-width: 1200px) {
+    .col-xl-#{$i} {
+      @include colWidth($i);
+    }
+  }
+}

@@ -1,0 +1,74 @@
+@import "../../styles/variables.scss";
+
+.login {
+  background: $bg;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  * {
+    @include transition(300ms);
+  }
+
+  form {
+    background: white;
+    width: 500px;
+    padding: 1rem;
+    @include borderRadius(0.3rem);
+    box-shadow: 0.2rem 0.3rem 1rem rgba($color: #121212, $alpha: 0.3);
+
+    .dm-toggle {
+      margin: 0 0 1rem;
+    }
+
+    h3 {
+      margin-bottom: 1rem;
+    }
+
+    button {
+      margin-top: 1rem;
+      width: 100%;
+      outline: 0;
+      border: 0;
+      padding: 0.5rem;
+      @include borderRadius(0.3rem);
+      background: linear-gradient(55deg, #5fa8d3, #00a2ff);
+      cursor: pointer;
+      text-transform: uppercase;
+      color: white;
+      font-size: 1.2rem;
+      @include transition(300ms);
+
+      &:hover {
+        filter: drop-shadow(1px 2px 3px black);
+        -webkit-filter: drop-shadow(1px 2px 3px black);
+      }
+
+      &:active {
+        filter: none;
+        -webkit-filter: none;
+      }
+    }
+  }
+}
+
+.dark .login {
+  background: $dark-bg;
+
+  form {
+    background: #424243;
+    h3,
+    input {
+      color: #a1aaaf;
+    }
+    .label-name {
+      color: #a1aaaf;
+      border-color: #a1aaaf !important;
+    }
+  }
+
+  .dm-toggle span::before {
+    color: $bg;
+  }
+}

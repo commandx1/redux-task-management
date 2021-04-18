@@ -1,0 +1,30 @@
+@import "../../styles/variables.scss";
+
+.btn {
+  padding: 0.5rem 1rem;
+  outline: none;
+  border: none;
+  @include borderRadius(0.3rem);
+  background: linear-gradient(45deg, #232323, #787878);
+  color: white;
+  text-transform: uppercase;
+  font-size: 16px;
+  cursor: pointer;
+
+  &:hover {
+    filter: drop-shadow(1px 2px 3px black);
+    -webkit-filter: drop-shadow(1px 2px 3px black);
+  }
+
+  &:active {
+    filter: none;
+    -webkit-filter: none;
+  }
+}
+
+.dark .btn {
+  &:hover {
+    filter: drop-shadow(1px 0.04rem 1px $bg);
+    -webkit-filter: drop-shadow(1px 0.04rem 1px $bg);
+  }
+}
